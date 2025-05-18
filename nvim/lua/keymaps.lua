@@ -1,5 +1,7 @@
--- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+
+vim.keymap.set('n', '<Leader>nt', vim.cmd.Ex, { desc = 'Open NetRW' })
+vim.keymap.set('n', '<D-s>', ':w<CR>', { desc = 'Save File (MacOS Cmd-S)' })
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
