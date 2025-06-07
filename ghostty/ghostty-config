@@ -1,0 +1,10 @@
+font-size=14
+font-family = "Jetbrains Mono"
+copy-on-select = clipboard
+font-feature = -calt
+
+# Adjust line-height, otherwise vim lines look too tight
+adjust-cell-height = 10%
+
+# Won't be useful when used with tmux
+window-save-state = always
