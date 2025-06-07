@@ -1,14 +1,9 @@
 --[[
-  Built with Kickstart.nvim.
-
-  You can use `:help lua-guide` as a reference for how Neovim integrates Lua.
+  Reference for how Neovim integrates Lua:
     - :help lua-guide
     - (or HTML version): https://neovim.io/doc/user/lua-guide.html
 
   The very first thing you should do is to run the command `:Tutor` in Neovim.
-
-  Once you've completed that, you can continue working through **AND READING** the rest
-    of the kickstart init.lua.
 
   Next, run AND READ `:help`.
     This will open up a help window with some basic information
@@ -26,7 +21,7 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
 require 'options'
 require 'keymaps'
 require 'lazy-bootstrap'
