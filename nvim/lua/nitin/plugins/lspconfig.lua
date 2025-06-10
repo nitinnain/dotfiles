@@ -41,7 +41,7 @@ return {
 
       --  This function gets run when an LSP attaches to a particular buffer.
       vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+        group = vim.api.nvim_create_augroup('my-lsp-attach', { clear = true }),
         callback = function(event)
           -- A helper function that lets us more easily define mappings specific
           -- for LSP related items. It sets the mode, buffer and description for us each time.
@@ -87,7 +87,7 @@ return {
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
-            local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+            local highlight_augroup = vim.api.nvim_create_augroup('my-lsp-highlight', { clear = false })
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
               group = highlight_augroup,
@@ -101,10 +101,10 @@ return {
             })
 
             vim.api.nvim_create_autocmd('LspDetach', {
-              group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
+              group = vim.api.nvim_create_augroup('my-lsp-detach', { clear = true }),
               callback = function(event2)
                 vim.lsp.buf.clear_references()
-                vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+                vim.api.nvim_clear_autocmds { group = 'my-lsp-highlight', buffer = event2.buf }
               end,
             })
           end
@@ -179,7 +179,7 @@ return {
         -- ts_ls = {},
         --
         basedpyright = {},
-        ruff = {},
+        -- ruff = {},
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -201,12 +201,12 @@ return {
       vim.list_extend(ensure_installed, {
         'stylua',
         -- 'basedpyright',
-        'ruff',
+        -- 'ruff',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
-        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        ensure_installed = {}, -- explicitly set to an empty table (Populate installs via mason-tool-installer)
         automatic_installation = false,
         handlers = {
           function(server_name)
