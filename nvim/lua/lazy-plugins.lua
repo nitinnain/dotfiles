@@ -23,25 +23,25 @@ require('lazy').setup({
   -- modular approach: using `require 'path/name'` will
   -- include a plugin definition from file lua/path/name.lua
 
-  require 'nitin/plugins/gitsigns',
+  require 'nitin.plugins.gitsigns',
 
-  require 'nitin/plugins/which-key',
+  require 'nitin.plugins.which-key',
 
-  require 'nitin/plugins/telescope',
+  require 'nitin.plugins.telescope',
 
-  require 'nitin/plugins/lspconfig',
+  require 'nitin.plugins.lspconfig',
 
-  require 'nitin/plugins/conform',
+  require 'nitin.plugins.conform',
 
-  require 'nitin/plugins/blink-cmp',
+  require 'nitin.plugins.blink-cmp',
 
-  require 'nitin/plugins/tokyonight',
+  require 'nitin.plugins.tokyonight',
 
-  require 'nitin/plugins/todo-comments',
+  require 'nitin.plugins.todo-comments',
 
-  require 'nitin/plugins/mini',
+  require 'nitin.plugins.mini',
 
-  require 'nitin/plugins/treesitter',
+  require 'nitin.plugins.treesitter',
 
   require 'nitin.plugins.neo-tree',
 
@@ -49,6 +49,7 @@ require('lazy').setup({
   -- require 'nitin.plugins.indent_line',
   -- require 'nitin.plugins.lint',
   -- require 'nitin.plugins.autopairs',
+  -- require 'nitin.plugins.undotree',
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
   --    This is the easiest way to modularize your config.

@@ -135,7 +135,7 @@ return {
             [vim.diagnostic.severity.HINT] = '󰌶 ',
           },
         } or {},
-        virtual_taext = {
+        virtual_text = {
           source = 'if_many',
           spacing = 2,
           format = function(diagnostic)
